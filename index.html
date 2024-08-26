@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GenLit: Probing Image-to-Video Models with Controllable Relighting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GenLit: Probing Image-to-Video Models with Controllable Relighting</title>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu"
+        aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GenLit: Probing Image-to-Video Models with Controllable Relighting
+            </h1>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br>
+  <br>
+
+  <!-- IN THE WILD VIDEOS -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">In-the-wild Images
+            </h2>
+            <p>
+              Top row: Input Image. Middle row: Relit Result. Bottom Row: GT Light Position.
+              <a href="static/additional_in_the_wild.html">More
+                results</a>
+            </p>
+            <div id=" results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img
+                  src="static/data/in_the_wild/input/IMG_5979.png"
+                  class="in_the_wild">
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/IMG_5979/IMG_5979_1.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/gt/1.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <div class="item">
+                <img
+                  src="static/data/in_the_wild/input/IMG_5909.png"
+                  class="in_the_wild">
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/IMG_5909/IMG_5909_2.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/gt/2.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <div class="item">
+                <img
+                  src="static/data/in_the_wild/input/IMG_6034.png"
+                  class="in_the_wild">
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/IMG_6034/IMG_6034_3.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/gt/3.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <div class="item">
+                <img
+                  src="static/data/in_the_wild/input/IMG_5946.png"
+                  class="in_the_wild">
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/IMG_5946/IMG_5946_4.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/gt/4.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <div class="item">
+                <img
+                  src="static/data/in_the_wild/input/IMG_5924.png"
+                  class="in_the_wild">
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/IMG_5924/IMG_5924_5.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/gt/5.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              <div class="item">
+                <img
+                  src="static/data/in_the_wild/input/IMG_6043.png"
+                  class="in_the_wild">
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/IMG_6043/IMG_6043_1.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video autoplay loop muted class="in_the_wild">
+                  <source
+                    src="static/data/in_the_wild/gt/1.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>    
+
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-11">
+              <h2 class="title is-3">Baseline Comparisons</h2>
+              <h2 class="title is-3">IC-Light</h2>
+
+
+              <h3 class="is-centered has-text-centered">Input
+                (first), IC-Light Prediction (second), Ours (third), GT (fourth) <a
+                  href="static/additional_ic_light.html">More
+                  Comparisons</a></h3>
+              <div class="pcontainer">
+
+                <div class="pcolumn">
+                  <img
+                    src="static/data/ic_light/input/42c9bdc4d27a418daa19b2d5ff690095.png"
+                    class="in_the_wild">
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="in_the_wild">
+                    <source
+                      src="static/data/ic_light/ic_light/42c9bdc4d27a418daa19b2d5ff690095.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="in_the_wild">
+                    <source
+                      src="static/data/ic_light/ours/42c9bdc4d27a418daa19b2d5ff690095.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="in_the_wild">
+                    <source
+                      src="static/data/ic_light/gt/42c9bdc4d27a418daa19b2d5ff690095.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <!-- INV RENDERING #################################### -->
+              <!-- </div> -->
+              <h2 class="title is-3">Inverse Rendering</h2>
+
+              <h3 class="is-centered has-text-centered">Input
+                (first), Inv Rendering (second), Ours (third), GT (fourth) <a
+                  href="static/additional_inv_rendering.html">More
+                  Comparisons</a></h3>
+              <div class="pcontainer">
+
+                <div class="pcolumn">
+                  <img
+                    src="static/data/inv_rendering/input/ce5b14926e494558ab584375a8d63ca7.png"
+                    class="in_the_wild">
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="in_the_wild">
+                    <source
+                      src="static/data/inv_rendering/inv_rendering/ce5b14926e494558ab584375a8d63ca7.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="in_the_wild">
+                    <source
+                      src="static/data/inv_rendering/ours/ce5b14926e494558ab584375a8d63ca7.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="in_the_wild">
+                    <source
+                      src="static/data/inv_rendering/gt/ce5b14926e494558ab584375a8d63ca7.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                This website's source code is borrowed from the <a
+                  href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+                project page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+
+</html>
